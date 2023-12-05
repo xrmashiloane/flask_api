@@ -1,12 +1,10 @@
 # syntax=docker/dockerfile:1
 
 # Use an official Python runtime as the base image
-FROM python:3.11-slim
+FROM python:3.11-slim-buster
 
 # Set the working directory in the container to /app
 WORKDIR /app
-
-# Copy the current directory (our Flask app) into the container at /app
 
 COPY requirements.txt requirements.txt
 
@@ -14,11 +12,8 @@ COPY requirements.txt requirements.txt
 
 RUN pip3 install -r requirements.txt
 
-
+# Copy the current directory (our Flask app) into the container at /app
 COPY . .
-
-# Make port 5000 available for the app
-EXPOSE 5000
 
 # Run the command to start the Flask app
 
