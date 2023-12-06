@@ -18,6 +18,37 @@ To deploy this project run
 ```
 
 
+## API Reference
+
+#### Get average load, available disk on file system
+
+```http
+  GET /utilisation
+```
+
+
+#### Get value
+
+```http
+  GET /value
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `string` | **Required**. Id of item to fetch |
+
+#### Update value, provide JSON with key return_value
+
+```http
+  POST /value
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `return_value`      | `int` | **Required**. key to update |
+
+
+
 ## Lessons Learned
 
   1. Started with running flask app locally to ensure endpoints were working

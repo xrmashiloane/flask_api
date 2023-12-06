@@ -32,7 +32,7 @@ def value():
             value=f"{value}"
         )
     if request.method == 'POST':
-
+        try:
             update = request.get_json()
 
             with app.open_resource('static/tech_assess.json', 'r') as f:
@@ -51,7 +51,10 @@ def value():
             return jsonify(
                 new_value=f"{value}"
             )  
-    
-    
+        except:
+            return jsonify(
+                message = "Update failed please provide valid json with key return_value "
+            )
+
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000)
