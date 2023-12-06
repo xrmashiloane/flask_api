@@ -15,8 +15,8 @@ RUN pip3 install -r requirements.txt
 # Copy the current directory (our Flask app) into the container at /app
 COPY . .
 
-EXPOSE 5000
+EXPOSE 4000
 
 # Run the command to start the Flask app
 
-CMD ["flask", "run", "--host", "0.0.0.0"]
+CMD ["flask", "run", "--host=0.0.0.0" , "--port=4000"]
